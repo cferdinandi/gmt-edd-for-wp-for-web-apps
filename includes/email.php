@@ -1,6 +1,11 @@
 <?php
 
 
+	/**
+	 * Update a customer's email address in EDD when they update it in WPWA
+	 * @param  Integer $user_id   The user's ID
+	 * @param  String  $old_email The user's previous email address
+	 */
 	function gmt_edd_for_wpwa_update_email( $user_id, $old_email ) {
 
 		if ( !class_exists( 'EDD_Customer' ) ) return;
