@@ -44,3 +44,14 @@
 	}
 	remove_action( 'user_register', 'edd_add_past_purchases_to_new_user', 10 );
 	add_action( 'user_register', 'gmt_edd_for_wpwa_add_past_purchases_to_new_user', 10, 1 );
+
+
+
+	/**
+	 * Verify new user in EDD
+	 * @param  integer $user_id [description]
+	 */
+	function gmt_edd_for_wpwa_verify_user( $user_id = 0 ) {
+		edd_set_user_to_verified( $user_id );
+	}
+	add_action( 'wpwebapp_after_password_reset', 'gmt_edd_for_wpwa_verify_user' );
